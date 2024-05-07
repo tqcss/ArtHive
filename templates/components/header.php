@@ -9,14 +9,14 @@
         <div></div>
     </button>
     <ul>
-        <li><a href="./index.php?route=foyer">Foyer</a></li>
-        <li><a href="./index.php?route=traverse">Traverse</a></li>
-        <li><a href="./Classifications.html">Classifications</a></li>
+        <li><a href="./index.php?route=foyer">FOYER</a></li>
+        <li><a href="./index.php?route=traverse">TRAVERSE</a></li>
+        <li><a href="./Classifications.html">CLASSIFICATIONS</a></li>
     </ul>
 </header>
 <ul class="dropdown">
-    <li><a href="./index.php?route=foyer">Foyer</a></li>
-    <li><a href="./index.php?route=traverse">Traverse</a></li>
-    <li><a href="./Classifications.html">Classifications</a></li>
+    <li><a href="./index.php?route=foyer">FOYER</a></li>
+    <li><a href="./index.php?route=traverse">TRAVERSE</a></li>
+    <li><a href="./Classifications.html">CLASSIFICATIONS</a></li>
 </ul>
 <script src="../assets/js/header.js"></script>
