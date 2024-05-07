@@ -23,42 +23,9 @@
   src: url(../fonts/montserrat/Montserrat-Bold.ttf);
 }
 
-#logo {
-  margin-left: -12vw !important;
-  margin-right: 0vw !important;
-}
-
-#foot_container {
-  overflow-x: hidden !important;
-}
-
-.fb-logo {
-  color: aliceblue !important;
-}
-
 html body {
   background-color: #043d4f;
   overflow-x: hidden !important;
-}
-
-.border-top {
-  border-top-width: 100vw !important;
-}
-
-.container {
-  width: 100vw !important;
-}
-
-.text-end button:nth-child(2) {
-  background-color: #fff859;
-}
-
-.mb-3 input::placeholder {
-  color: black; /* Change to your desired color */
-}
-
-#news {
-  background-color: white;
 }
 
 .title {
@@ -234,29 +201,6 @@ html body {
 
 .fade-in {
   animation: fadeIn 1.5s ease-in-out;
-}
-
-.nav_elements:hover {
-  color: #fff859 !important;
-  transition: 1s !important;
-}
-
-.nav_elements:after {
-  content: "" !important;
-  height: 3px !important;
-  width: 0 !important;
-  background: #fff859 !important;
-  position: absolute !important;
-  left: 0 !important;
-  bottom: -5px !important;
-  transition: 0.4s !important;
-}
-.nav_elements:hover:after {
-  width: calc(100% - 95px) !important;
-}
-
-.nav11 {
-  width: 100vw !important;
 }
 
 footer.py-5 {
