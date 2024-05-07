@@ -16,16 +16,14 @@
     <div class="banner fade-in">
         <div> <video src="../assets/videos/foyer-hero.mp4" type="video/mp4" autoplay muted></video></div>
         <div class="title">
-            <div>
+            <div class=introduction>
                 <p id="good">GOOD TYDINGS!</p>
-            </div>
-            <div>
-                <h1>welcome to<span> ArtHive</span></h1>
+                <h1>welcome to <span>ArtHive</span></h1>
             </div>
             <div id="Feel">
                 <p>Feel free to explore the diversing splenders from the antiquity of historical masterpieces to the ever emerging contemporary art</p>
             </div>
-            <div><a href="./Traverse.html"><button class="button">LET'S TRAVERSE</button></a></div>
+            <div><a href="./index.php?route=traverse"><button class="button">LET'S TRAVERSE</button></a></div>
         </div>
     </div>
 
