@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #022b3b;
+}
+
+aside {
+    position: fixed;
+    display: flexbox;
+    width: 125px;
+    height: 100lvh;
+    background-color: #043d4f;
+    flex-direction: column;
+    padding: 15px;
+    margin-top: 80px;
+    padding-left: 5px;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0,0,0,.6)
+}

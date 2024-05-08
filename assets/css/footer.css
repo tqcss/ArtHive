@@ -20,3 +20,14 @@
   .nav11 {
     width: 100vw !important;
   }
+
+  .honeycomb-wrapper {
+    position: absolute;
+    aspect-ratio: 1/1;
+    width: 30rem;
+    height: 30rem;
+    top: -2rem;
+    right: -4rem;
+    opacity: 20%;
+    z-index: -1;
+  }
