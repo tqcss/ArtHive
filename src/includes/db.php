@@ -1,9 +1,11 @@
 <?php
-require_once '../config.php';
-$database = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+require_once '../src/config.php';
+try {
+    $database = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+} catch (mysqli_sql_exception) {
+    die('Could not connect to database');
+}
 
-function checkConnection() { return !empty($database); } // returns true if successfully connected to db, false otherwise
-function closeConnection() { $database->close(); }
 
 class Request {
     private $result;

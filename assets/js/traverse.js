@@ -4,6 +4,7 @@ const eraContainer = document.querySelector('.era-nav-container');
 const eraBadges = eraContainer.children;
 const eraNavInfo = document.querySelector('.era-nav-info');
 const eraNavInfoContent = document.querySelector('.era-nav-info-wrapper').children;
+const eraNavImgWrapper = document.getElementsByClassName('era-nav-img-wrapper');
 
 let currentBadge;
 let badgeLabel;
@@ -28,7 +29,7 @@ function badgeMouseEnter(event) {
     updateInfo(event);
     if (!infoShown) {
         setTimeout(() => {
-            if (Date.now() - startHoverTime < 2100) {
+            if (Date.now() - startHoverTime < 2050) {
                 infoShown = true;
                 showInfo();
                 body.addEventListener('mousedown', loseAsideFocus);
@@ -51,7 +52,7 @@ function badgeMouseLeave() {
 }
 
 function badgeMouseClick(event) {
-    window.location.href = 'index.php?route=traverse&era=' + event.target.dataset.name;
+    window.location.href = 'index.php?route=traverse&era=' + ((event.target.dataset.name) ? event.target.dataset.name : event.target.parentNode.dataset.name);
 }
 
 function loseAsideFocus(event) {
@@ -63,17 +64,21 @@ function loseAsideFocus(event) {
 
 function showInfo() {
     aside.animate({
-        width: '30rem'
-    }, {duration: 300, fill: 'forwards'});
+        maxWidth: '30rem'
+    }, {duration: 500, fill: 'forwards'});
 
     eraNavInfo.animate({
-        width: '100%'
-    }, {duration: 300, fill: 'forwards'});
+        maxWidth: '100%'
+    }, {duration: 500, fill: 'forwards'});
 }
 
 function updateInfo(event) {
-    let currentEra = event.target.dataset.name;
-    eraNavInfoContent[0].innerHTML = currentEra + ' Era';
+    let currentEraData = event.target.dataset;
+    eraNavInfoContent[0].innerHTML = currentEraData.name + ' Era';
+    eraNavInfoContent[1].innerHTML = currentEraData.desc;
+
+    let eraBackground = event.target.parentNode.parentNode.parentNode.children[1].children[0];
+    eraBackground.src = '../assets/images/eras/' + currentEraData.img;
 
     for (i = 0; i < eraNavInfoContent.length; i++) {
         eraNavInfoContent[i].animate({
@@ -84,19 +89,28 @@ function updateInfo(event) {
             opacity: '1'
         }, { duration: 300, fill: 'forwards'});
     }
+
+    eraBackground.animate({
+        opacity: '0'
+    }, { duration: 500, fill: 'forwards'});
+
+    eraBackground.animate({
+        opacity: '0.2'
+    }, { duration: 500, fill: 'forwards'});
 }
 
 function hideInfo() {
     aside.animate({
-        width: '6rem'
-    }, {duration: 300, fill: 'forwards'});
+        maxWidth: '6rem'
+    }, {duration: 500, fill: 'forwards'});
 
     eraNavInfo.animate({
-        width: '0'
-    }, {duration: 300, fill: 'forwards'});
+        maxWidth: '0rem'
+    }, {duration: 500, fill: 'forwards'});
 }
 
 for (i = 0; i < eraBadges.length; i++) {
-    eraBadges[i].addEventListener('mouseenter', badgeMouseEnter);
-    eraBadges[i].addEventListener('click', badgeMouseClick);
+    let badge = eraBadges[i].children[0];
+    badge.addEventListener('mouseenter', badgeMouseEnter);
+    badge.addEventListener('click', badgeMouseClick);
 }
