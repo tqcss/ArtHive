@@ -23,21 +23,6 @@
     <?php include 'components/header.php' ?>
 
     <aside>
-        <div class="era-nav-info">
-            <div class="era-nav-info-img-wrapper">
-                <img src="" draggable="false"> 
-            </div>
-            <div class="era-img-wrapper-overlay"></div>
-            <div id="horizontal-line1"></div>
-            <div class="era-nav-info-content">
-                <h3>Lorem Ipsum</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dignissimos itaque, maiores dolores
-                    pariatur provident, aspernatur distinctio vitae fuga veritatis cupiditate eaque ut sint ab. Hic
-                    asperiores iure esse veritatis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati amet doloremque soluta labore totam unde aspernatur corrupti facilis, necessitatibus quos ab vero voluptatem dolor, temporibus itaque, debitis neque eos. Dolores?
-                </p>
-            </div>
-        </div>
         <div class="era-nav-container">
             <div class="era-nav-img-wrapper" data-name="Byzantine">
                 <img src="" draggable="false">
@@ -61,9 +46,22 @@
                 <img src="" draggable="false">
             </div>
         </div>
+        <div class="era-nav-info">
+            <img src="" draggable="false">
+            <div class="era-nav-info-wrapper">
+                <h3>NULL</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure expedita odio excepturi voluptas
+                    ducimus molestias fugiat nam reiciendis optio sint, maxime perferendis quia quae eos aliquid!
+                    Magnam laudantium fugit officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos,
+                    necessitatibus maxime. Sapiente, aliquid molestias ullam quasi assumenda sit iste! Excepturi ipsam,
+                    repudiandae tenetur accusantium eius dolore itaque nemo ex eos.
+                </p>
+            </div>
+        </div>
     </aside>
 
-    < <div class="traverse-section">
+    <div class="traverse-section">
         <div class="content_2">
             <div id="discover">
                 <h1>discover art movements</h1>

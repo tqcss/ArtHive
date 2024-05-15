@@ -1,9 +1,9 @@
 const body = document.querySelector('body');
 const aside = document.querySelector('aside');
-const eraNavInfo = document.querySelector('.era-nav-info');
-const eraNavInfoContent = document.querySelector('.era-nav-info-content');
 const eraContainer = document.querySelector('.era-nav-container');
 const eraBadges = eraContainer.children;
+const eraNavInfo = document.querySelector('.era-nav-info');
+const eraNavInfoContent = document.querySelector('.era-nav-info-wrapper').children;
 
 let currentBadge;
 let badgeLabel;
@@ -25,10 +25,8 @@ function badgeMouseEnter(event) {
     document.addEventListener('mousemove', badgeMouseMove);
     currentBadge.addEventListener('mouseleave', badgeMouseLeave);
     
-    if (infoShown) {
-        showInfo();
-        body.addEventListener('mousedown', loseAsideFocus);
-    } else {
+    updateInfo(event);
+    if (!infoShown) {
         setTimeout(() => {
             if (Date.now() - startHoverTime < 2100) {
                 infoShown = true;
@@ -40,8 +38,8 @@ function badgeMouseEnter(event) {
 }
 
 function badgeMouseMove(event) {
-    badgeLabel.style.top = (event.clientY + 1) + 'px';
-    badgeLabel.style.left = (event.clientX + 1) + 'px';
+    badgeLabel.style.top = (event.clientY + 5) + 'px';
+    badgeLabel.style.left = (event.clientX + 5) + 'px';
 }
 
 function badgeMouseLeave() {
@@ -53,33 +51,52 @@ function badgeMouseLeave() {
 }
 
 function badgeMouseClick(event) {
-    
+    window.location.href = 'index.php?route=traverse&era=' + event.target.dataset.name;
 }
 
 function loseAsideFocus(event) {
-    console.log(event.target.parentNode);
-    if (event.target.parentNode == aside || event.target.parentNode.parentNode == aside || event.target.parentNode.parentNode.parentNode == aside) { return; }
+    if (event.target.parentNode === aside || event.target.parentNode.parentNode === aside || event.target.parentNode.parentNode.parentNode === aside) { return; }
     infoShown = false;
     hideInfo();
+    body.removeEventListener('mousedown', loseAsideFocus);
 }
 
 function showInfo() {
-    eraNavInfoContent.children[0].innerHTML = currentBadge.dataset.name + ' Era'; 
+    aside.animate({
+        width: '30rem'
+    }, {duration: 300, fill: 'forwards'});
+
     eraNavInfo.animate({
-        width: '30rem',
-        height: '45rem',
-        opacity: 1
-    }, { duration: 300, fill: 'forwards' });
+        width: '100%'
+    }, {duration: 300, fill: 'forwards'});
+}
+
+function updateInfo(event) {
+    let currentEra = event.target.dataset.name;
+    eraNavInfoContent[0].innerHTML = currentEra + ' Era';
+
+    for (i = 0; i < eraNavInfoContent.length; i++) {
+        eraNavInfoContent[i].animate({
+            opacity: '0'
+        }, { duration: 0, fill: 'forwards'});
+
+        eraNavInfoContent[i].animate({
+            opacity: '1'
+        }, { duration: 300, fill: 'forwards'});
+    }
 }
 
 function hideInfo() {
+    aside.animate({
+        width: '6rem'
+    }, {duration: 300, fill: 'forwards'});
+
     eraNavInfo.animate({
-        width: 0,
-        height: 0,
-        opacity: 0
-    }, { duration: 300, fill: 'forwards' });
+        width: '0'
+    }, {duration: 300, fill: 'forwards'});
 }
 
 for (i = 0; i < eraBadges.length; i++) {
     eraBadges[i].addEventListener('mouseenter', badgeMouseEnter);
+    eraBadges[i].addEventListener('click', badgeMouseClick);
 }
