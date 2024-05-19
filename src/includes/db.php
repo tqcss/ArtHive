@@ -7,16 +7,16 @@ try {
 }
 
 
-class Request {
-    private $result;
+// class Request {
+//     private $result;
 
-    public function __construct($tableName, $column, $match) {
-        $this->result = $database->query("SELECT * FROM {$tableName} WHERE {$column} = {$match}");
-    }
+//     public function __construct($tableName, $column, $match) {
+//         $this->result = $database->query("SELECT * FROM {$tableName} WHERE {$column} = {$match}");
+//     }
 
-    public function fetch() {
-        return mysqli_fetch_assoc($this->result);
-    }
-}
+//     public function fetch() {
+//         return mysqli_fetch_assoc($this->result);
+//     }
+// }
 
 ?>

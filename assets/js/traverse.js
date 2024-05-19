@@ -5,6 +5,7 @@ const eraBadges = eraContainer.children;
 const eraNavInfo = document.querySelector('.era-nav-info');
 const eraNavInfoContent = document.querySelector('.era-nav-info-wrapper').children;
 const eraNavImgWrapper = document.getElementsByClassName('era-nav-img-wrapper');
+const slideContainer = document.querySelector('.slide-container');
 
 let currentBadge;
 let badgeLabel;
@@ -56,10 +57,11 @@ function badgeMouseClick(event) {
 }
 
 function loseAsideFocus(event) {
+    console.log(1, event.target);
     if (event.target.parentNode === aside || event.target.parentNode.parentNode === aside || event.target.parentNode.parentNode.parentNode === aside) { return; }
     infoShown = false;
     hideInfo();
-    body.removeEventListener('mousedown', loseAsideFocus);
+    document.removeEventListener('mousedown', loseAsideFocus);
 }
 
 function showInfo() {

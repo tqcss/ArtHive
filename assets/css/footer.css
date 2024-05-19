@@ -1,3 +1,7 @@
+* {
+  color: white !important;
+}
+
 .nav_elements:hover {
     color: #fff859 !important;
     transition: 1s !important;
@@ -19,7 +23,7 @@
   
   .nav11 {
     width: 100vw !important;
-  }
+  } 
 
   .honeycomb-wrapper {
     position: absolute;

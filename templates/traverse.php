@@ -25,60 +25,92 @@
     <aside>
         <div class='era-nav-container'>
             <?php
-                include '../src/includes/db.php';
-                
-                $eraNames = array(
-                    'Byzantine',
-                    'Romanesque',
-                    'Gothic',
-                    'Rennaissance',
-                    'Mannerism',
-                    'Baroque',
-                    'Rococo'
-                );
+            include '../src/includes/db.php';
 
-                foreach ($eraNames as $eraName) {
-                    $result = mysqli_query($database, "SELECT * FROM eras WHERE name = '{$eraName}'");
-                    if (mysqli_num_rows($result) != 1) { continue; }
-                    $eraData = mysqli_fetch_assoc($result);
-                    echo "
+            $eraNames = array(
+                'Byzantine',
+                'Romanesque',
+                'Gothic',
+                'Rennaissance',
+                'Mannerism',
+                'Baroque',
+                'Rococo'
+            );
+
+            foreach ($eraNames as $eraName) {
+                $result = mysqli_query($database, "SELECT * FROM eras WHERE name = '{$eraName}'");
+                if (mysqli_num_rows($result) != 1) {
+                    continue;
+                }
+                $eraData = mysqli_fetch_assoc($result);
+                echo "
                     <div class='era-nav-border-wrapper'>
                         <div class='era-nav-img-wrapper' data-name='{$eraName}' data-img='{$eraData['era_image']}' data-desc=\"{$eraData['description']}\">
                         <img src='../assets/images/eras/{$eraData['era_image']}' draggable='false' onload=\"this.parentNode.style.background = 'unset'; this.style.opacity = 1;\">
                         </div>
                     </div>
                     ";
-                };
+            };
 
-                mysqli_close($database);
+            mysqli_close($database);
             ?>
         </div>
         <div class='era-nav-info'>
             <img src='' draggable='false'>
             <div class='era-nav-info-wrapper'>
-                <h3>NULL</h3>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure expedita odio excepturi voluptas
-                    ducimus molestias fugiat nam reiciendis optio sint, maxime perferendis quia quae eos aliquid!
-                    Magnam laudantium fugit officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos,
-                    necessitatibus maxime. Sapiente, aliquid molestias ullam quasi assumenda sit iste! Excepturi ipsam,
-                    repudiandae tenetur accusantium eius dolore itaque nemo ex eos.
-                </p>
+                <h3>null</h3>
+                <p>null</p>
             </div>
         </div>
     </aside>
 
-    <div class='traverse-section'>
-        <div class='content_2'>
-            <div id='discover'>
-                <h1>discover art movements</h1>
+    <div id='honeycomb1'>
+        <?php include 'components/honeycomb.php' ?>
+    </div>
+    <div class='page-header'>
+        <div class="header-container">
+            <h1 id="discover">discover art movements</h1>
+            <h2 id="different">in different eras</h2>
+        </div>
+    </div>
+    <div class='featured-section'>
+        <div class='vertical-line'></div>
+        <div class='featured-label'>
+            <h1>featured</h1>
+            <h2>ARTISTS</h2>
+        </div>
+        <div class="slide-container">
+            <div class='slide-info'>
+                <h3>Test</h3>
+                <a>>> Know thy artist</a>
             </div>
-            <div id='different'>
-                <h2>in different eras</h2>
-            </div>
+            <?php
+            include '../src/includes/db.php';
+            
+            $result = mysqli_query($database, 'SELECT * from artists WHERE featured = 1 LIMIT 5');
+            
+            if ($result->num_rows == 0) {
+                echo 'No results found';
+                die;    
+            }
 
-
-            <div class='rectangle'>
+            while ($row = $result->fetch_assoc()) {
+                echo "
+                    <div class='slide' dataset-name='{$row['first_name']} {$row['last_name']}'>
+                        <img src='../assets/images/compiled/{$row['user_image']}' draggable='false' onload='this.parentNode.style.background = \"unset\"; this.style.opacity = 1;'>
+                    </div>
+                ";
+            }
+             
+            $database->close();
+            ?>
+        </div>
+        <div class="slide-controls">
+            <button><</button>
+            <button>></button>
+        </div>
+    </div>
+    <!-- <div class='rectangle'>
                 <div id='inside'>
                     <div>
                         <h3 id='featured'>featured</h3>
@@ -86,13 +118,6 @@
                     <div id='artist'>
                         <h3 id='artists'>ARTISTS</h3>
                     </div>
-
-                    <script>
-                        document.getElementById('discover').classList.add('animate');
-                        document.getElementById('different').classList.add('animate');
-                    </script>
-
-
                     <div class='slider-container'>
                         <div class='slide active'>
                             <a href='artist.html#Van Gogh' target='_blank'>
@@ -227,9 +252,11 @@
                     <div class='vertical-line'></div>
 
                 </div>
-            </div>
-
-
+            </div> -->
+    
+    <div class="footer-wrapper">
+        <?php include 'components/footer.php'; ?>
+    </div>
 </body>
 
 </html>
