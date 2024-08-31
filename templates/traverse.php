@@ -80,25 +80,29 @@
             <h2>ARTISTS</h2>
         </div>
         <div class="slide-container">
-            <div class='slide-info'>
+            <div class='slide-info' style="pointer-events: none;">
                 <h3>Test</h3>
                 <a>>> Know thy artist</a>
             </div>
             <?php
             include '../src/includes/db.php';
             
-            $result = mysqli_query($database, 'SELECT * from artists WHERE featured = 1 LIMIT 5');
+            $result;
+            if (isset($_GET['era'])) {
+                $result = mysqli_query($database, "SELECT * from artists WHERE featured = 1 AND era = '{$_GET['era']}' LIMIT 5");
+            } else {
+                $result = mysqli_query($database, 'SELECT * from artists WHERE featured = 1 LIMIT 5');
+            }
             
             if ($result->num_rows == 0) {
                 echo 'No results found';
-                die;    
             }
 
             while ($row = $result->fetch_assoc()) {
                 echo "
-                    <div class='slide' dataset-name='{$row['first_name']} {$row['last_name']}'>
+                    <a class='slide' data-name='{$row['first_name']} {$row['last_name']}' href='./index.php?route=artist&id={$row['user_id']}'>
                         <img src='../assets/images/compiled/{$row['user_image']}' draggable='false' onload='this.parentNode.style.background = \"unset\"; this.style.opacity = 1;'>
-                    </div>
+                    </a>
                 ";
             }
              

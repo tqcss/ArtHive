@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 150vh;
+  width: 100%;
+  background-color: #072d39;
+}
+
+.main-wrapper {
+  position: relative;
+  display: flex;
+  margin-top: 2em;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 2em;
+}
+
+.logo {
+  height: auto;
+  width: 20vw;
+  padding-top: 1em;
+}
+
+.title {
+  text-align: center;
+  font-size: 7vw;
+}
+
+.title h1 {
+  color: #fff859;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+
+.title p {
+  color: #fff859;
+  font-family: "Sansation", sans-serif;
+  font-size: 0.4em;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.about-wrapper {
+  position: relative;
+  text-align: center;
+  margin-top: 5em;
+  padding-top: 5em;
+  margin-right: 4em;
+  margin-left: 4em;
+}
+
+.title-with-lines {
+  color: #fff859;
+  font-family: "Montserrat", sans-serif;
+  font-size: 6vw;
+  font-weight: 900;
+  position: relative;
+}
+
+.title-with-lines span {
+  display: inline-block;
+  margin-left: 0.6em;
+  margin-right: 0.6em;
+}
+
+.title-with-lines .line {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30%;
+  height: 3px;
+  background-color: #fff859;
+}
+
+.title-with-lines .left {
+  left: 0;
+}
+
+.title-with-lines .right {
+  right: 0;
+}
+
+.about-wrapper p {
+  margin-top: 1em;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.75vw;
+  font-weight: 200;
+  transition-delay: 0.5s;
+}
+
+.float-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-in-out;
+}
+
+.float-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 426px) {
+  .logo {
+    height: auto;
+    width: 29vw;
+    padding-top: 2vw;
+    margin-left: 2vw;
+  }
+
+  .about-wrapper {
+    position: relative;
+    text-align: center;
+    margin-top: 5em;
+    padding-top: 5em;
+    margin-right: 5vw;
+    margin-left: 5vw;
+  }
+
+  .about-wrapper p {
+    margin-top: 1em;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 2.75vw;
+    font-weight: 200;
+    transition-delay: 0.5s;
+  }
+}

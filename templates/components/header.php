@@ -11,12 +11,12 @@
     <ul>
         <li><a href="./index.php?route=foyer">FOYER</a></li>
         <li><a href="./index.php?route=traverse">TRAVERSE</a></li>
-        <li><a href="./Classifications.html">CLASSIFICATIONS</a></li>
+        <li><a href="./index.php?route=classifications">CLASSIFICATIONS</a></li>
     </ul>
 </header>
 <ul class="dropdown">
     <li><a href="./index.php?route=foyer">FOYER</a></li>
     <li><a href="./index.php?route=traverse">TRAVERSE</a></li>
-    <li><a href="./Classifications.html">CLASSIFICATIONS</a></li>
+    <li><a href="./index.php?route=classifications">CLASSIFICATIONS</a></li>
 </ul>
 <script src="../assets/js/header.js"></script>

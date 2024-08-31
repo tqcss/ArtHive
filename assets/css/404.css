@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.bg-image {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(158, 165, 240, 0.625), #0c627ca2),
+    url("../images/ui/pixelcut-export1.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+#container {
+  height: 78vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-weight: 200;
+  font-size: 3.5vw;
+  letter-spacing: 0.22vw;
+  text-shadow: 0.2vw 0.2vw 0.5vw rgba(0, 0, 0, 0.8);
+  margin-left: 0vw;
+  line-height: 9vw;
+  margin-top: 8vw;
+}
+
+img {
+  height: 100vw;
+  width: 100vw;
+}
+
+.error-page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.error-page img {
+  height: 88%;
+  width: 43%;
+}
+
+.error {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 8.5vw;
+  font-weight: 800;
+  letter-spacing: 0.5vw;
+  line-height: 3vw;
+  height: 100%;
+}
+
+div.crror_container {
+  height: 100vw;
+}
+
+p {
+  color: white;
+  font-family: "Sansation", sans-serif;
+  text-align: center;
+  font-size: 2.5vw;
+  font-weight: 200;
+  font-style: italic;
+  width: 66vw;
+  margin-left: 17vw;
+  line-height: 3vw;
+  margin-top: 4vw;
+}
+
+h2 {
+  font-size: 2.2vw;
+}
+
+.return span:hover {
+  color: #fff859;
+}
+
+.return {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 300;
+  margin-left: 2.5vw;
+  margin-top: 1vw;
+}
+.return a {
+  text-decoration: none;
+}
+
+/* .return span {
+  color: #FFF859;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.return span:hover {
+    text-shadow: .5vw 1.5vw 4vw rgba(3, 37, 29, 0.84);
+} */
+
+.return span {
+  text-decoration: none;
+  color: #fff859;
+  font-weight: 900;
+  position: relative;
+}
+
+.return span:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #fff859;
+  border-radius: 2px;
+  transition: width 0.8s ease-in-out;
+}
+
+.return span:hover:after {
+  width: 100%;
+}
+
+@media (max-width: 426px) {
+  h1 {
+    font-size: 6vw;
+    margin-left: 6vw;
+  }
+
+  .error {
+    font-size: 18.5vw;
+    margin-left: 4vw;
+    line-height: 14vw;
+  }
+
+  p {
+    font-size: 3.5vw;
+  }
+
+  .return {
+    margin-left: 2.5vw;
+    font-size: 3vw;
+  }
+
+  .error-page img {
+    height: 100%;
+    width: 70%;
+  }
+}

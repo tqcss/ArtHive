@@ -9,10 +9,10 @@ if (!$route) {
     die;
 }
 
-if ($route === 'artist' or $route === 'painting') { // if artist/painting search is incomplete, load explore page
-    require_once path('traverse');
-    die;
-}
+// if ($route === 'artist' or $route === 'painting') { // if artist/painting search is incomplete, load explore page
+//     require_once path('traverse');
+//     die;
+// }
 
 if (preg_match('/^artists\/(\d+)$/', $route, $matches)) {
     $artistId = $matches[1];

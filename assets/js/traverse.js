@@ -6,11 +6,16 @@ const eraNavInfo = document.querySelector('.era-nav-info');
 const eraNavInfoContent = document.querySelector('.era-nav-info-wrapper').children;
 const eraNavImgWrapper = document.getElementsByClassName('era-nav-img-wrapper');
 const slideContainer = document.querySelector('.slide-container');
+const slideButtons = document.querySelector('.slide-controls');
+const slides = document.getElementsByClassName('slide');
+const artistLabel = document.querySelector('.slide-info>h3');
 
 let currentBadge;
 let badgeLabel;
 let startHoverTime = 0;
 let infoShown = false;
+let currentSlide = 0;
+let autoplaying = true;
 
 
 function badgeMouseEnter(event) {
@@ -111,8 +116,55 @@ function hideInfo() {
     }, {duration: 500, fill: 'forwards'});
 }
 
+function turnNextSlide() {
+    if (currentSlide != slides.length - 1) {
+        currentSlide += 1
+    } else {
+        currentSlide = 0;
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].animate({
+            transform: 'translateX(' + (currentSlide * -100) + '%)'
+        }, {duration: 800, fill: 'forwards'});
+    }
+    artistLabel.innerHTML = slides[currentSlide].dataset.name;
+}
+
+function autoplay() {
+    if (autoplaying == false) {
+        autoplaying = true;
+    } else {
+        turnNextSlide();
+    }
+}
+
+slideButtons.children[0].addEventListener('click', () => {
+    autoplaying = false;
+
+    if (currentSlide == 0) {
+        currentSlide = slides.length - 1;
+    } else {
+        currentSlide -= 1;
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].animate({
+            transform: 'translateX(' + (currentSlide * -100) + '%)'
+        }, {duration: 800, fill: 'forwards'});
+    }
+    artistLabel.innerHTML = slides[currentSlide].dataset.name;
+})
+
+slideButtons.children[1].addEventListener('click', () => {
+    autoplaying = false;
+
+    turnNextSlide();
+})
+
 for (i = 0; i < eraBadges.length; i++) {
     let badge = eraBadges[i].children[0];
     badge.addEventListener('mouseenter', badgeMouseEnter);
     badge.addEventListener('click', badgeMouseClick);
 }
+
+setInterval(autoplay, 4000);
+artistLabel.innerHTML = slides[0].dataset.name;

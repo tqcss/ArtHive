@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Glacial Indifference', sans-serif;
+  }
+
+.bg-image {
+    overflow: auto;
+    animation: fadeIn 1s ease-in-out; /* adjust duration to your liking */
+    background-color: rgba(255, 255, 255, 0.274);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.tailor-thy {
+  animation: wipe-right 1.7s ease-in-out;
+  animation-delay: 0.1s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes wipe-right {
+  0% {
+    transform: translateX(-15%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(1%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.art-era {
+  animation: wipe-up 1.7s ease-in-out;
+  animation-delay: 0.1s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes wipe-up {
+  0% {
+    transform: translateY(15%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(-1%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.fancy {
+  animation: wipe-left 1.5s ease-in-out;
+  animation-delay: 0.1s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes wipe-left {
+  0% {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(-1%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+.bg-image {
+    height: 120vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(158, 165, 240, 0.625), #0c627ccb), url("../images/ui/pixelcut-export1.jpeg");
+    background-position: center;
+    background-size: cover;
+}
+
+.navbar{
+  width: 100%;
+  margin: auto;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.103);
+}
+.navbar span {
+  font-size: 3em;
+  font-weight: bold;
+  margin-left: -6.8em;
+  color: white;
+}
+
+
+.logo {
+  position: relative;
+  width: 100px;
+  margin-top: -5px;
+  margin-left: 40px;
+}
+.navbar ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 0px 20px 0px;
+  padding-right: 6em;
+  position: relative;
+}
+.navbar ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Poppins', sans-serif;
+}
+.navbar ul li::after{
+  content: '';
+  height: 3px;
+  width: 0;
+  background: #FFF859;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.4s;
+}
+.navbar ul li:hover:after{
+  width: calc(100% - 95px);
+}
+
+
+header {
+    position: relative;
+    margin-top: 1em;
+    z-index: 1;
+}
+
+.tailor-thy{
+    font-size: 2.9em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    color: white;
+    padding-left: 38vh;
+    text-shadow: 1px 2px 5px rgba(12, 27, 102, 0.484);
+    text-align: left;
+}
+
+.art-era {
+    font-size: 6.3em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    color:#FFF859;
+    margin-top: -100px;
+    margin-bottom: -60px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 2px 5px 5px rgba(14, 30, 108, 0.30);
+}
+
+
+.fancy {
+    font-size: 3.4em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-style: italic;
+    color: white;
+    margin-top: 10px;
+    padding-right: 40vh;
+    text-shadow: 1px 2px 5px rgba(12, 27, 102, 0.484);
+    text-align: right;
+}
+
+/*------SELECT AN ERA Carousel-------*/
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15vh;
+  
+}
+
+
+.carousel-outer {
+  display: flex;
+  width: 70%;
+  height: 0;
+  margin-top: 40vh;
+  padding-bottom: 40%;
+  background-color: #f1f8ff59;
+  backdrop-filter: blur(1px);
+  border-radius: 40px;
+  
+}
+
+.carousel-inner{
+  display: flex;
+  margin-top: 80px;
+  width: 100%;
+  height: 380px;
+  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  align-items: center;
+}
+
+/*------Carousel Texts-------*/
+.carousel-item {
+  display: block ;
+  width: 70%;
+  height: 70px; /* Adjust the height as needed */
+  color: white;
+  margin-top: 10px; /* Adjust the margin as needed */
+  margin-bottom: 10px; /* Adjust the margin as needed */
+  line-height: 32px; /* Adjust the line-height as needed */
+  letter-spacing: 1px;
+  transition: transform 1.05s;
+  animation: fadeText 1s ease-in-out;
+  animation-delay: 1.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+
+.carousel-item:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.carousel-item:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fffee1;
+  transition: width 0.3s ease-in-out;
+}
+
+.carousel-item:hover:before {
+  width: 100%;
+}
+
+.number{
+  width: 30px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 1.7em;
+  font-family: "Poiret One", sans-serif;
+  font-weight: 200;
+  float: left;
+  margin-right: 20px;
+  letter-spacing: 1px;
+  text-shadow: 1px 2px 9px rgba(7, 23, 101, 0.9); 
+}
+
+.carousel-text {
+  line-height: 50px;
+  text-align: center;
+  font-size: 1.9em;
+  font-weight: 800;
+  color: white;
+  float: left;
+  text-shadow: 2px 3px 5px rgba(12, 27, 102, 0.484); 
+}
+
+
+
+.carousel-year {
+  line-height: 50px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 800;
+  color: #fffee1;
+  float: right;
+  text-shadow: 1px 2px 9px rgba(4, 0, 63, 0.676); 
+}
+
+.first-item{
+  margin-top: 5px;
+}

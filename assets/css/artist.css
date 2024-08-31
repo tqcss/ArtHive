@@ -1,0 +1,620 @@
+@font-face {
+  font-family: Poppins-ExtraLight;
+  src: url(./fonts/poppins/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: Poppins-ExtraBold;
+  src: url(./fonts/poppins/Poppins-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url(./fonts/poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Thin;
+  src: url(./fonts/poppins/Poppins-Thin.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(./fonts/montserrat/Montserrat-Bold.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Glacial Indifference", sans-serif;
+}
+
+html body {
+  background-color: #043d4f;
+  overflow-x: hidden !important;
+}
+
+/*Main Section*/
+
+.artist-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #043d4f;
+  overflow: hidden;
+}
+
+.Up_img {
+  width: 100%;
+  height: 70vw;
+  object-fit: cover;
+  position: relative;
+  opacity: 40%;
+}
+
+.Up_img {
+  animation: fade-in 2s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*main nga pic ja*/
+.main {
+  width: 40vw;
+  height: 55vw;
+  margin-left: 10vw;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  border-radius: 3vw;
+}
+
+.main {
+  animation: slide-in 3s ease-in-out;
+}
+
+@keyframes slide-in {
+  0% {
+    margin-left: 70vw;
+  }
+  100% {
+    margin-left: 10vw;
+  }
+}
+
+#artist-container {
+  position: absolute;
+  top: 30vw;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.artist_ {
+  width: 30%;
+}
+
+/*ri naman ang heading name*/
+
+h1.vin {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 8rem;
+  margin-left: 23vw;
+  position: relative;
+  z-index: 1;
+  line-height: 13vw;
+  text-align: right;
+  width: 42vw;
+  margin-top: 9vw;
+}
+
+h1.vin {
+  animation: bounce 4s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*s part nga description*/
+
+.artist-background {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #043d4f;
+  color: white;
+  margin-top: 19vw;
+  margin-left: 7vw;
+  margin-right: 4vw;
+  text-align: center;
+}
+
+.description {
+  font-size: 2.2vw;
+  font-family: "Poppins";
+  margin-top: 6vw;
+}
+
+.artist-background {
+  animation: slide 3s ease-in-out;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*Signature Masterpieces*/
+
+.content_3 {
+  position: relative;
+  width: 100vw;
+  height: 120vw;
+  background-color: #043d4f;
+  overflow: hidden;
+}
+
+h1.sig {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 6vw;
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: -0.3em;
+  margin-left: 9em;
+  letter-spacing: 0.2vw;
+}
+
+h1.sig {
+  animation: bounce 8s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+h2.master {
+  position: relative;
+  color: #fff859;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 9vw;
+  text-align: center;
+  margin-bottom: 3em;
+  letter-spacing: 1vw;
+}
+
+h2.master {
+  animation: slide 8s ease-in-out;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.swiper-container body {
+  background: #212121;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vw;
+}
+
+.swiper-container {
+  width: 100%;
+  margin-top: -9vh;
+  border-radius: 3vw;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 350px;
+  height: 350px;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 3vw;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  border-radius: 4vw;
+  -webkit-box-reflect: below 1px
+    linear-gradient(transparent, transparent, #0005);
+  transition: transform 0.3s ease-in-out;
+}
+
+.swiper-slide:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 2vw rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+.swiper-slide:hover img {
+  transform: scale(1.1);
+  border-radius: 3vw;
+}
+
+.id {
+  color: #fff;
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.swiper-button-prev {
+  margin-left: 1vw;
+  color: #fff;
+}
+
+.swiper-button-next {
+  margin-right: 1vw;
+  color: #fff;
+}
+.swiper-slide {
+  position: relative;
+}
+
+.date-label {
+  font-family: "Italiana";
+  position: absolute;
+  top: 3vw;
+  right: 3vw;
+  font-size: 2vw;
+  color: #fff;
+  text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+}
+.artwork-label {
+  font-family: "Italiana";
+  font-weight: bold;
+  position: absolute;
+  bottom: 4vw;
+  margin-left: 17vw;
+  font-size: 2vw;
+  color: #fff;
+  text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.artwork-label_2 {
+  font-family: "Italiana";
+  font-weight: bold;
+  position: absolute;
+  bottom: 4vw;
+  margin-left: 17vw;
+  font-size: 2vw;
+  color: #fff;
+  text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.artwork-label_3 {
+  font-family: "Italiana";
+  font-weight: bold;
+  position: absolute;
+  bottom: 4vw;
+  margin-left: 17vw;
+  font-size: 2vw;
+  color: #fff;
+  text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.artwork-label_4 {
+  font-family: "Italiana";
+  font-weight: bold;
+  position: absolute;
+  bottom: 4vw;
+  margin-left: 17vw;
+  font-size: 2vw;
+  color: #fff;
+  text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.artwork-label_5 {
+  font-family: "Italiana";
+  font-weight: bold;
+  position: absolute;
+  bottom: 4vw;
+  margin-left: 17vw;
+  font-size: 2vw;
+  color: #fff;
+  text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+footer.py-5 {
+  padding-bottom: 0vw !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.container {
+  margin-top: 10vw !important;
+}
+
+.nav_first_element {
+  font-size: 2.1vw !important;
+  /* margin-left: 1vw !important; */
+}
+
+.nav_elements1 {
+  /* margin-left: 11vw !important; */
+  font-size: 2.1vw !important;
+}
+
+@media (min-width: 2560px) {
+  #footer_container {
+    position: absolute !important;
+    left: 3vw !important;
+    width: 94vw !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    overflow-x: hidden !important;
+  }
+}
+
+@media (max-width: 426px) {
+  h1.sig {
+    font-size: 5.5vw;
+    margin-left: 11em;
+  }
+
+  h2.master {
+    margin-left: 4vw;
+  }
+
+  .content_3 {
+    height: 150vw;
+  }
+
+  .description {
+    text-align: justify;
+    text-indent: 8vw;
+  }
+
+  span.artwork-label {
+    font-family: "Italiana";
+    font-weight: bold;
+    position: absolute;
+    bottom: 4vw;
+    margin-left: 7vw;
+    font-size: 2vw;
+    color: #fff;
+    text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  .artwork-label_2 {
+    font-family: "Italiana";
+    font-weight: bold;
+    position: absolute;
+    bottom: 4vw;
+    margin-left: 17vw;
+    font-size: 2vw;
+    color: #fff;
+    text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  span.artwork-label_3 {
+    font-family: "Italiana";
+    font-weight: bold;
+    position: absolute;
+    bottom: 4vw;
+    margin-left: 10vw;
+    font-size: 2vw;
+    color: #fff;
+    text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  span.artwork-label_4 {
+    font-family: "Italiana";
+    font-weight: bold;
+    position: absolute;
+    bottom: 4vw;
+    margin-left: 11vw;
+    font-size: 2vw;
+    color: #fff;
+    text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  .artwork-label_5 {
+    font-family: "Italiana";
+    font-weight: bold;
+    position: absolute;
+    bottom: 4vw;
+    margin-left: 17vw;
+    font-size: 2vw;
+    color: #fff;
+    text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  p.size {
+    text-align: center;
+    font-size: 4vw;
+    width: 75vw;
+  }
+
+  #first {
+    margin-left: 0vw !important;
+  }
+
+  img {
+    height: 102vw;
+    width: 100%;
+    border-radius: 27px;
+    -webkit-box-reflect: below 1px
+      linear-gradient(transparent, transparent, #0005);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media (max-width: 376px) {
+  h1.sig {
+    font-size: 6vw;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: -0.3em;
+    margin-left: 9em;
+    letter-spacing: 0.2vw;
+  }
+
+  span.date-label {
+    font-family: "Italiana";
+    position: absolute;
+    top: 5vw;
+    right: 10vw;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .swiper-container {
+    width: 100%;
+    margin-top: 0vh;
+    border-radius: 27px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+}
+
+@media (max-width: 321px) {
+  img {
+    height: 108vw;
+  }
+
+  h1.sig {
+    font-size: 6vw;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: -0.3em;
+    margin-left: 9em;
+    letter-spacing: 0.2vw;
+  }
+
+  span.date-label {
+    font-family: "Italiana";
+    position: absolute;
+    top: 5vw;
+    right: 17vw;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .swiper-container {
+    width: 100%;
+    margin-top: 0vh;
+    border-radius: 27px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+
+  span.artwork-label {
+    font-family: "Italiana";
+    font-weight: bold;
+    position: absolute;
+    bottom: 4vw;
+    margin-left: 18vw;
+    font-size: 2vw;
+    color: #fff;
+    text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  span.artwork-label_2 {
+    font-family: "Italiana";
+    font-weight: bold;
+    position: absolute;
+    bottom: 4vw;
+    margin-left: 19vw;
+    font-size: 2vw;
+    color: #fff;
+    text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  span.artwork-label_3 {
+    font-family: "Italiana";
+    font-weight: bold;
+    position: absolute;
+    bottom: 4vw;
+    margin-left: 17vw;
+    font-size: 2vw;
+    color: #fff;
+    text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  span.artwork-label_4 {
+    font-family: "Italiana";
+    font-weight: bold;
+    position: absolute;
+    bottom: 4vw;
+    margin-left: 17vw;
+    font-size: 2vw;
+    color: #fff;
+    text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  span.artwork-label_5 {
+    font-family: "Italiana";
+    font-weight: bold;
+    position: absolute;
+    bottom: 4vw;
+    margin-left: 19vw;
+    font-size: 2vw;
+    color: #fff;
+    text-shadow: 0 0 3vw rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+}

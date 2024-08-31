@@ -80,7 +80,7 @@ html body {
   position: relative;
   text-decoration: none;
   background-color: #fff859;
-  color: #022b3b;
+  color: #022b3b !important;
   box-shadow: 0 0 10 black;
   transform: translateY(50px);
   opacity: 0%;
